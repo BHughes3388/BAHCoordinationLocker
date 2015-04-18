@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'BAHCoordinationLocker', :exclusive => true do
+  pod "BAHCoordinationLocker", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "BAHCoordinationLocker", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
