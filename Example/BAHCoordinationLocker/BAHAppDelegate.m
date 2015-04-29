@@ -36,6 +36,23 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+   
+    BAHCoordinationLockerViewController *lockView = [[BAHCoordinationLockerViewController alloc]init];
+    [lockView setTapViewSize:85.0f];
+    [lockView setBackgroundColor:[UIColor colorWithRed:105/255.0f green:205/255.0f blue:255/255.0f alpha:1.0f]];
+    [lockView setBackGroundImage:[UIImage imageNamed:@"wallpaper.jpg"]];
+    [lockView setFrostedViewBackGroundColor:[UIColor colorWithRed:0.72f green:0.72f blue:0.72f alpha:0.75f]];
+    [lockView setTopTapViewTintColor:[UIColor colorWithRed:0.8f green:0.3f blue:0.2f alpha:0.5f]];
+    [lockView setTopTapViewBorderTintColor:[UIColor whiteColor].CGColor];
+    [lockView setBottomTapViewTintColor:[UIColor colorWithRed:0.2f green:0.3f blue:0.8f alpha:0.75f]];
+    [lockView setBottomTapViewBorderTintColor:[UIColor whiteColor].CGColor];
+    [lockView setSuccessLabelText:@"You're In!"];
+    [lockView setSuccessLabelTextColor:[UIColor colorWithWhite:1.0f alpha:0.85f]];
+    [lockView setTollerance:0.1];
+    
+    [lockView checkSettingsForCoordinationLockerOnView:self.window.rootViewController];
+
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

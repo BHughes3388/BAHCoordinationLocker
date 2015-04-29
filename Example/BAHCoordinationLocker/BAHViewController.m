@@ -18,6 +18,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *title = [[UILabel alloc]init];
+    [title setText:@"Main ViewController"];
+    [title setFont:[UIFont systemFontOfSize:30.0f]];
+    [title sizeToFit];
+    [title setCenter:CGPointMake(self.view.center.x, self.view.center.y - 100)];
+    [title setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin];
+    [self.view addSubview:title];
+    
+    
+    [BAHCoordinationLockerViewController setActivateHour:[NSNumber numberWithInt:12]];
+    [BAHCoordinationLockerViewController setDeActivateHour:[NSNumber numberWithInt:24]];
+
 }
 
 - (void)didReceiveMemoryWarning
